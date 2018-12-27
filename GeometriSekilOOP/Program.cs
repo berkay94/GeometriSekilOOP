@@ -10,8 +10,19 @@ namespace GeometriSekilOOP
     {
         static void Main(string[] args)
         {
-            Kare k = new Kare(5);
-            Console.WriteLine($"Karenin Cevresi:{k.cevre} Alani:{k.alan}");
+            //Kare k = new Kare(3);
+            //Console.WriteLine($"Karenin Cevresi:{k.Cevre} Alani:{k.Alan}");
+
+
+            Dikdortgen d = new Dikdortgen(3,5);
+            Console.WriteLine($"Dikdortgen Cevresi:{d.Cevre} Alani:{d.Alan}");
+
+            Daire daire = new Daire(5);
+            Console.WriteLine($"Dairenin Cevresi:{daire.Cevre} Alani:{daire.Alan}");
+
+            KarePrizma kp = new KarePrizma(5,5);
+            Console.WriteLine($"KarePrizmanin Alani:{kp.Alan} Hacmi:{kp.Hacim}");
+
             Console.ReadLine();
         }
     }
@@ -63,31 +74,47 @@ namespace GeometriSekilOOP
     }
     public class Dikdortgen : Sekil
     {
-        int kisaKenar;
-        int uzunKenar;
+        int _kisaKenar;
+        int _uzunKenar;
 
         public Dikdortgen()
         {
 
         }
-        public Dikdortgen(int kisakenar, int uzunkenar)
+        public Dikdortgen(int kskenar,int uznkenar)
         {
-
+            _kisaKenar = kskenar;
+            _uzunKenar = uznkenar;
+            Alan = _kisaKenar * _uzunKenar;
+            Cevre = ((2 * _kisaKenar) + (2 * _uzunKenar));
         }
 
 
-        public double Cevre
+        public int KisaKenar
         {
             get
             {
-                return Cevre;
+                return _kisaKenar;
             }
             set
             {
-
+                _kisaKenar = value;
             }
-
         }
+        public int UzunKenar
+        {
+            get
+            {
+                return _uzunKenar;
+            }
+            set
+            {
+                _uzunKenar = value;
+            }
+        }
+
+        
+
 
 
 
@@ -117,40 +144,11 @@ namespace GeometriSekilOOP
             }
         }
 
-        /// <summary>
-        /// Karenin Çevresini Hesaplar
-        /// </summary>
-        public double Cevre
-        {
-            get
-            {
-                return cevre;
-            }
-            set
-            {
-                cevre = kenarUzunlugu * 4;
-            }
-        }
-
-
-        public double Alan
-        {
-            get
-            {
-                return alan;
-            }
-            set
-            {
-                alan = kenarUzunlugu * kenarUzunlugu;
-            }
-        }
-
-
         public Kare(int kenar)
         {
             KenarUzunlugu = kenar;
-            this.Cevre = kenar;
-            this.Alan = kenar;
+            Alan = kenarUzunlugu * kenarUzunlugu;
+            Cevre = 4 * KenarUzunlugu;
         }
 
         public Kare()
@@ -158,4 +156,36 @@ namespace GeometriSekilOOP
 
         }
     }
+
+    public class Daire:Sekil
+    {
+        int r;
+       
+        public int R
+        {
+            get
+            {
+                return r;
+
+            }
+            set
+            {
+                r = value;
+            }
+        }
+
+        public Daire(int yrcp)
+        {
+            R = yrcp;
+
+            Alan = R * R * Math.PI;
+            Cevre = 2 * R * Math.PI;
+        }
+        public Daire()
+        {
+                
+        }
+    }
+        
+        
 }
