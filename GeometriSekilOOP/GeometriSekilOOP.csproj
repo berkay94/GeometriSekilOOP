@@ -52,7 +52,6 @@
     <Compile Include="KarePrizma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reference.cs" />
     <Compile Include="Sekil.cs" />
     <Compile Include="Silindir.cs" />
   </ItemGroup>

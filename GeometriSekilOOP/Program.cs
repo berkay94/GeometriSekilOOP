@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Geometri;
 
 namespace GeometriSekilOOP
 {
@@ -25,6 +26,12 @@ namespace GeometriSekilOOP
 
             Silindir s = new Silindir(3,3);
             Console.WriteLine($"Silindirin Alani:{s.Alan} Hacmi:{s.Hacim}");
+            
+
+            //Add Reference//
+            Geometri.Rectangle rectangle = new Rectangle(2, 3);
+            Console.WriteLine("Rec area:"+rectangle.CalculateArea().ToString());
+
             Console.ReadLine();
         }
     }
