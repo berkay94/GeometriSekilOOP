@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometriSekilOOP
 {
-    public class Sekil
+    public class Sekil:Isekil
     {
         string sekilTip;
         internal double alan;
@@ -60,6 +60,14 @@ namespace GeometriSekilOOP
                 sekilTip = value;
             }
 
+        }
+        public Sekil()
+        {
+
+        }
+        public void Yazdir()
+        {
+            Console.WriteLine($"Alan: {Alan}\nCevre: {Cevre} \nHacim: {Hacim}");
         }
     }
 }

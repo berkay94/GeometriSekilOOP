@@ -34,6 +34,20 @@ namespace GeometriSekilOOP
 
             Console.ReadLine();
         }
+
+
+    }
+
+    interface Isekil
+    {
+        double Alan { get; set; }
+        double Cevre { get; set; }
+        double Hacim { get; set; }
+
+        void Yazdir();
+
+        
+        
     }
 
 
